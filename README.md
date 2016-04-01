@@ -3,7 +3,7 @@ About owslib
 
 Home: https://geopython.github.io/OWSLib
 
-Package license: BSD License
+Package license: BSD-3-Clause
 
 Feedstock license: BSD
 
@@ -72,6 +72,11 @@ Current build status
 Linux: [![Circle CI](https://circleci.com/gh/conda-forge/owslib-feedstock.svg?style=svg)](https://circleci.com/gh/conda-forge/owslib-feedstock)
 OSX: [![TravisCI](https://travis-ci.org/conda-forge/owslib-feedstock.svg?branch=master)](https://travis-ci.org/conda-forge/owslib-feedstock) 
 Windows: [![AppVeyor](https://ci.appveyor.com/api/projects/status/github/conda-forge/owslib-feedstock?svg=True)](https://ci.appveyor.com/project/conda-forge/owslib-feedstock/branch/master)
+
+Current release info
+====================
+Version: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/owslib/badges/version.svg)](https://anaconda.org/conda-forge/owslib)
+Downloads: [![Anaconda-Server Badge](https://anaconda.org/conda-forge/owslib/badges/downloads.svg)](https://anaconda.org/conda-forge/owslib)
 
 
 Updating owslib-feedstock
