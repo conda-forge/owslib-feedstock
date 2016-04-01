@@ -3,7 +3,7 @@ About owslib
 
 Home: https://geopython.github.io/OWSLib
 
-Package license: BSD License
+Package license: BSD-3-Clause
 
 Feedstock license: BSD
 
