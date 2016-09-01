@@ -1,4 +1,4 @@
-{% set version = "0.11.0" %}
+{% set version = "0.11.2" %}
 
 package:
     name: owslib
@@ -6,8 +6,8 @@ package:
 
 source:
     fn: OWSLib-{{ version }}.tar.gz
-    url: https://pypi.python.org/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
-    md5: 72437afa6e0eda059194ac2eae0b113b
+    url: https://github.com/geopython/OWSLib/archive/{{ version }}.tar.gz
+    sha256: df3a3a40b57b9b53c1dfbc8b27388453e2f92ed008fadda883a8376d67882a6a
 
 build:
     number: 0
@@ -22,8 +22,8 @@ requirements:
         - python-dateutil
         - pytz
         - requests
-        - lxml
         - pyproj
+        - lxml
 
 test:
     imports:
@@ -37,10 +37,12 @@ test:
 
 about:
     home: https://geopython.github.io/OWSLib
-    license: BSD-3-Clause
-    summary: OGC Web Service utility library
+    license: BSD 3-Clause
+    summary: 'OGC Web Service utility library.'
 
 extra:
     recipe-maintainers:
+        - kalxas
+        - tomkralidis
         - pelson
         - ocefpaf
