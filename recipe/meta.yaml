@@ -1,4 +1,4 @@
-{% set version = "0.13.0" %}
+{% set version = "0.14.0" %}
 
 package:
   name: owslib
@@ -7,7 +7,7 @@ package:
 source:
   fn: OWSLib-{{ version }}.tar.gz
   url: https://github.com/geopython/OWSLib/archive/{{ version }}.tar.gz
-  sha256: bad5fb032de216cfc371c99ec1d3a3d6cb4fcd54e8836fee6ffa24037365ed91
+  sha256: dd4273b2e418e811c109ee5f96e9d6b71cd50b84427d264bfe4583faee3d31de
 
 build:
   number: 0
