@@ -5,9 +5,11 @@ package:
   version: {{ version }}
 
 source:
-  fn: OWSLib-{{ version }}.tar.gz
-  url: https://github.com/geopython/OWSLib/archive/{{ version }}.tar.gz
-  sha256: dd4273b2e418e811c109ee5f96e9d6b71cd50b84427d264bfe4583faee3d31de
+  url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
+  sha256: 3b77ae9bb752d96c9eda9509099f92ca0c28dd03ba624ad71e6cdad471380368
+  patches:
+    # Already merge upstream https://github.com/geopython/OWSLib/pull/380
+    - py3k_compat.patch  # [py3k]
 
 build:
   number: 0
