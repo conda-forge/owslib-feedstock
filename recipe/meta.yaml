@@ -1,4 +1,4 @@
-{% set version = "0.14.0" %}
+{% set version = "0.15.0" %}
 
 package:
   name: owslib
@@ -6,13 +6,11 @@ package:
 
 source:
   url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
-  sha256: 3b77ae9bb752d96c9eda9509099f92ca0c28dd03ba624ad71e6cdad471380368
-  patches:
-    # Already merge upstream https://github.com/geopython/OWSLib/pull/380
-    - py3k_compat.patch  # [py3k]
+  sha256: 4d0bc3fe7763ae05ab15a83cf22715f4922a23296eb0813f2e54a01401745000
 
 build:
-  number: 1
+  number: 0
+  noarch: python
   script: python setup.py install --single-version-externally-managed --record=record.txt
 
 requirements:
