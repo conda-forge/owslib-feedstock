@@ -1,4 +1,4 @@
-{% set version = "0.15.0" %}
+{% set version = "0.16.0" %}
 
 package:
   name: owslib
@@ -6,17 +6,17 @@ package:
 
 source:
   url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
-  sha256: 4d0bc3fe7763ae05ab15a83cf22715f4922a23296eb0813f2e54a01401745000
+  sha256: ec95a5e93c145a5d84b0074b9ea27570943486552a669151140debf08a100554
 
 build:
   number: 0
   noarch: python
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
   build:
     - python
-    - setuptools
+    - pip
   run:
     - python
     - python-dateutil
