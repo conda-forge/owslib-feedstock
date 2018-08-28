@@ -9,12 +9,12 @@ source:
   sha256: ec95a5e93c145a5d84b0074b9ea27570943486552a669151140debf08a100554
 
 build:
-  number: 0
+  number: 1
   noarch: python
-  script: python -m pip install --no-deps --ignore-installed .
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
+  host:
     - python
     - pip
   run:
@@ -37,9 +37,9 @@ test:
 
 about:
   home: https://geopython.github.io/OWSLib
-  license: BSD 3-Clause
+  license: BSD-3-Clause
   license_file: LICENSE.txt
-  summary: 'OGC Web Service utility library.'
+  summary: 'OGC Web Service utility library'
 
 extra:
   recipe-maintainers:
