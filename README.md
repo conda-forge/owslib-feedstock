@@ -3,11 +3,11 @@ About owslib
 
 Home: https://geopython.github.io/OWSLib
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: BSD 3-Clause
 
-Summary: OGC Web Service utility library.
+Summary: OGC Web Service utility library
 
 
 
