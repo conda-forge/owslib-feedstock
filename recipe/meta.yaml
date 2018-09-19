@@ -38,7 +38,8 @@ test:
 about:
   home: https://geopython.github.io/OWSLib
   license: BSD-3-Clause
-  license_file: LICENSE
+  # see https://github.com/geopython/OWSLib/pull/518
+  #license_file: LICENSE
   summary: 'OGC Web Service utility library'
 
 extra:
