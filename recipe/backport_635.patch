@@ -1,0 +1,164 @@
+diff -Naur OWSLib-0.19.0.orig/owslib/coverage/wcsBase.py OWSLib-0.19.0/owslib/coverage/wcsBase.py
+--- OWSLib-0.19.0.orig/owslib/coverage/wcsBase.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/coverage/wcsBase.py	2019-12-28 09:14:52.806588855 -0300
+@@ -9,9 +9,8 @@
+ # Contact email: d.lowe@rl.ac.uk
+ # =============================================================================
+ 
+-from urllib.parse import urlencode
++from urllib.parse import urlencode, parse_qsl
+ from owslib.etree import etree
+-import cgi
+ from owslib.util import Authentication, openURL
+ 
+ 
+@@ -85,7 +84,7 @@
+         """
+         qs = []
+         if service_url.find('?') != -1:
+-            qs = cgi.parse_qsl(service_url.split('?')[1])
++            qs = parse_qsl(service_url.split('?')[1])
+ 
+         params = [x[0] for x in qs]
+ 
+@@ -145,7 +144,7 @@
+         """
+         qs = []
+         if service_url.find('?') != -1:
+-            qs = cgi.parse_qsl(service_url.split('?')[1])
++            qs = parse_qsl(service_url.split('?')[1])
+ 
+         params = [x[0] for x in qs]
+ 
+diff -Naur OWSLib-0.19.0.orig/owslib/feature/common.py OWSLib-0.19.0/owslib/feature/common.py
+--- OWSLib-0.19.0.orig/owslib/feature/common.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/feature/common.py	2019-12-28 09:15:05.211363017 -0300
+@@ -1,9 +1,8 @@
+-import cgi
+ from io import StringIO
+ from owslib.etree import etree
+ from owslib.util import Authentication, openURL
+ 
+-from urllib.parse import urlencode
++from urllib.parse import urlencode, parse_qsl
+ 
+ 
+ def makeStringIO(strval):
+@@ -38,7 +37,7 @@
+         """
+         qs = []
+         if service_url.find("?") != -1:
+-            qs = cgi.parse_qsl(service_url.split("?")[1])
++            qs = parse_qsl(service_url.split("?")[1])
+ 
+         params = [x[0] for x in qs]
+ 
+diff -Naur OWSLib-0.19.0.orig/owslib/feature/schema.py OWSLib-0.19.0/owslib/feature/schema.py
+--- OWSLib-0.19.0.orig/owslib/feature/schema.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/feature/schema.py	2019-12-28 09:15:31.189051353 -0300
+@@ -9,9 +9,8 @@
+ generating layer schema description compatible with `fiona`
+ """
+ 
+-import cgi
+ import sys
+-from urllib.parse import urlencode
++from urllib.parse import urlencode, parse_qsl
+ from owslib.etree import etree
+ from owslib.namespaces import Namespaces
+ from owslib.util import which_etree, findall, Authentication, openURL
+@@ -145,7 +144,7 @@
+ 
+     query_string = []
+     if url.find("?") != -1:
+-        query_string = cgi.parse_qsl(url.split("?")[1])
++        query_string = parse_qsl(url.split("?")[1])
+ 
+     params = [x[0] for x in query_string]
+ 
+diff -Naur OWSLib-0.19.0.orig/owslib/map/common.py OWSLib-0.19.0/owslib/map/common.py
+--- OWSLib-0.19.0.orig/owslib/map/common.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/map/common.py	2019-12-28 09:14:42.325953094 -0300
+@@ -1,5 +1,4 @@
+-import cgi
+-from urllib.parse import urlencode
++from urllib.parse import urlencode, parse_qsl
+ 
+ from owslib.etree import etree
+ from owslib.util import strip_bom, Authentication, openURL
+@@ -38,7 +37,7 @@
+         """
+         qs = []
+         if service_url.find('?') != -1:
+-            qs = cgi.parse_qsl(service_url.split('?')[1])
++            qs = parse_qsl(service_url.split('?')[1])
+ 
+         params = [x[0] for x in qs]
+ 
+diff -Naur OWSLib-0.19.0.orig/owslib/swe/observation/sos100.py OWSLib-0.19.0/owslib/swe/observation/sos100.py
+--- OWSLib-0.19.0.orig/owslib/swe/observation/sos100.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/swe/observation/sos100.py	2019-12-28 09:15:34.489271671 -0300
+@@ -1,7 +1,6 @@
+-import cgi
+ from owslib.etree import etree
+ from datetime import datetime
+-from urllib.parse import urlencode
++from urllib.parse import urlencode, parse_qsl
+ from owslib import ows
+ from owslib.crs import Crs
+ from owslib.fes import FilterCapabilities
+@@ -290,7 +289,7 @@
+         """
+         qs = []
+         if service_url.find('?') != -1:
+-            qs = cgi.parse_qsl(service_url.split('?')[1])
++            qs = parse_qsl(service_url.split('?')[1])
+ 
+         params = [x[0] for x in qs]
+ 
+diff -Naur OWSLib-0.19.0.orig/owslib/swe/observation/sos200.py OWSLib-0.19.0/owslib/swe/observation/sos200.py
+--- OWSLib-0.19.0.orig/owslib/swe/observation/sos200.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/swe/observation/sos200.py	2019-12-28 09:15:38.513541950 -0300
+@@ -1,6 +1,5 @@
+-import cgi
+ from owslib.etree import etree
+-from urllib.parse import urlencode
++from urllib.parse import urlencode, parse_qsl
+ from owslib import ows
+ from owslib.crs import Crs
+ from owslib.fes import FilterCapabilities200
+@@ -307,7 +306,7 @@
+         """
+         qs = []
+         if service_url.find('?') != -1:
+-            qs = cgi.parse_qsl(service_url.split('?')[1])
++            qs = parse_qsl(service_url.split('?')[1])
+ 
+         params = [x[0] for x in qs]
+ 
+diff -Naur OWSLib-0.19.0.orig/owslib/util.py OWSLib-0.19.0/owslib/util.py
+--- OWSLib-0.19.0.orig/owslib/util.py	2019-11-14 16:44:02.000000000 -0300
++++ OWSLib-0.19.0/owslib/util.py	2019-12-28 09:14:28.101119764 -0300
+@@ -15,12 +15,11 @@
+ import pytz
+ from owslib.etree import etree, ParseError
+ from owslib.namespaces import Namespaces
+-from urllib.parse import urlsplit, urlencode, urlparse, parse_qs, urlunparse
++from urllib.parse import urlsplit, urlencode, urlparse, parse_qs, urlunparse, parse_qsl
+ import copy
+ 
+ from io import StringIO, BytesIO
+ 
+-import cgi
+ import re
+ from copy import deepcopy
+ import warnings
+@@ -558,7 +557,7 @@
+ 
+     qs_base = []
+     if base_url.find('?') != -1:
+-        qs_base = cgi.parse_qsl(base_url.split('?')[1])
++        qs_base = parse_qsl(base_url.split('?')[1])
+ 
+     qs_params = []
+     for key, value in list(params.items()):
