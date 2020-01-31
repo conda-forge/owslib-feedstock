@@ -1,4 +1,4 @@
-{% set version = "0.19.0" %}
+{% set version = "0.19.1" %}
 
 package:
   name: owslib
@@ -6,13 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
-  sha256: 1d499981e13a1233822e94ee30c95ddd35d11f176e854d7f0cdc30ef55f5b065
-  patches:
-    # we can drop this when it is merged upstream
-    - backport_635.patch
+  sha256: 11a9d67f99fff23349ea52ae19adbf9f8a10ec521d373b83ccb8547cf3063904
 
 build:
-  number: 2
+  number: 0
   noarch: python
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
