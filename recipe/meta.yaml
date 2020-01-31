@@ -7,9 +7,6 @@ package:
 source:
   url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
   sha256: 11a9d67f99fff23349ea52ae19adbf9f8a10ec521d373b83ccb8547cf3063904
-  patches:
-    # we can drop this when it is merged upstream
-    - backport_635.patch
 
 build:
   number: 0
