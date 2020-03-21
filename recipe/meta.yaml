@@ -9,19 +9,20 @@ source:
   sha256: 605a742d088f1ed9c946e824d0b3be94b5256931f8b230dae63e27a52c781b6d
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . --no-deps -vv
 
 requirements:
   host:
-    - python >=3
+    - python >=3.6
     - pip
   run:
-    - python >=3
-    - pyproj
+    - python >=3.6
+    - pyproj >=2
     - python-dateutil >=1.5
     - pytz
+    - pyyaml
     - requests >=1.0
 
 test:
@@ -33,6 +34,10 @@ test:
     - owslib.swe.observation
     - owslib.swe.sensor
     - owslib.waterml
+  commands:
+    - pip check
+  requires:
+    - pip
 
 about:
   home: https://geopython.github.io/OWSLib
