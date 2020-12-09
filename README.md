@@ -5,11 +5,9 @@ Home: https://geopython.github.io/OWSLib
 
 Package license: BSD-3-Clause
 
-Feedstock license: BSD 3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/owslib-feedstock/blob/master/LICENSE.txt)
 
 Summary: OGC Web Service utility library
-
-
 
 Current build status
 ====================
