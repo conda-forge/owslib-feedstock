@@ -1,4 +1,4 @@
-{% set version = "0.27.2" %}
+{% set version = "0.28.0" %}
 
 package:
   name: owslib
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
-  sha256: e102aa2444dfe0c8439ab1e1776cc0fa47cea28c09b8a28212c893c6017c179b
+  sha256: dad03f5d955c16a763954d554f63318cd3037aef7abd08fc564f5e83f72fab94
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
