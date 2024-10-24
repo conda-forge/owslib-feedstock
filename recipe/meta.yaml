@@ -1,4 +1,4 @@
-{% set version = "0.31.0" %}
+{% set version = "0.32.0" %}
 
 package:
   name: owslib
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/O/OWSLib/OWSLib-{{ version }}.tar.gz
-  sha256: 2ed6540087445cc57d905138a590b6ae58624ec7661b5c1682ed4e3303bcd150
+  sha256: 7513860d3102ae8d4dc5efd8652ff3c61eca3a8cb220d6c8601121357cd2b01a
 
 build:
   number: 0
@@ -21,10 +21,10 @@ requirements:
     - dataclasses
     - python >=3.8
     - lxml
-    - python-dateutil >=1.5
+    - python-dateutil
     - pytz
     - pyyaml
-    - requests >=1.0
+    - requests
 
 test:
   imports:
