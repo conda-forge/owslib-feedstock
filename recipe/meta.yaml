@@ -1,6 +1,6 @@
-{% set python_min = '3.10' %}
+{% set python_min = "3.10" %}
 {% set name = "owslib" %}
-{% set version = "0.32.0" %}
+{% set version = "0.32.1" %}
 
 package:
   name: {{ name|lower }}
@@ -8,12 +8,12 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/OWSLib-{{ version }}.tar.gz
-  sha256: 7513860d3102ae8d4dc5efd8652ff3c61eca3a8cb220d6c8601121357cd2b01a
+  sha256: 339d499849a14b9c27eeebb67fbcfa52c2e7be82251750dab8b5721669cd1f04
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
-  number: 1
+  number: 0
 
 requirements:
   host:
