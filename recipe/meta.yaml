@@ -1,6 +1,6 @@
 {% set python_min = "3.10" %}
 {% set name = "owslib" %}
-{% set version = "0.33.0" %}
+{% set version = "0.34.0" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 261c76c1a1dd066b011cddac451e3f9a00d3328c7af90d5592c089b5fc590766
+  sha256: e3efa68a569c6b4a0aff5e6f5fb9cc492784ae4ea856a60aabe647c9e51f2e30
 
 build:
   noarch: python
