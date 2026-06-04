@@ -3,7 +3,7 @@ About owslib-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/owslib-feedstock/blob/main/LICENSE.txt)
 
-Home: https://geopython.github.io/OWSLib
+Home: https://pypi.org/project/owslib/
 
 Package license: BSD-3-Clause
 
