@@ -1,0 +1,52 @@
+schema_version: 1
+
+context:
+  version: "0.36.0"
+
+package:
+  name: owslib
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/o/owslib/owslib-${{ version }}.tar.gz
+  sha256: b1ea352ee84f37a1a8ae44122b13cbd3b5b7bf9af0f74d84fe9ed7d9613b9543
+
+build:
+  number: 0
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - setuptools <69
+    - wheel
+    - pip
+  run:
+    - python >=${{ python_min }}
+    - lxml
+    - python-dateutil
+    - pyyaml
+    - requests
+
+tests:
+  - python:
+      imports:
+        - owslib
+      pip_check: true
+      python_version:
+        - ${{ python_min }}.*
+        - "*"
+
+about:
+  summary: OGC Web Service utility library
+  license: BSD-3-Clause
+  license_file: LICENSE
+  homepage: https://pypi.org/project/owslib/
+
+extra:
+  recipe-maintainers:
+    - kalxas
+    - tomkralidis
+    - pelson
+    - ocefpaf
